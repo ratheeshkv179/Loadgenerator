@@ -34,8 +34,7 @@ public class Constants {
 	static final int timeoutAlarmRequestCode = 123343;
 	static final int killTimeoutDuration = 180; //in minutes
 	static final String logDirectory = Environment.getExternalStorageDirectory().getAbsolutePath() + "/loadgenerator/logs";
-	
-	
+
 	//temporary
 	static final String LOGTAG = "LOADGENERATOR";
 	static final String LINEDELIMITER = "* * * * * *\n";

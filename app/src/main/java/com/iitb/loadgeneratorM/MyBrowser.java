@@ -102,7 +102,7 @@ public class MyBrowser extends WebViewClient {
 	 //  		logwriter.append("Inside SHOULD INTERCEPT Response: "+obj+" \n");
            return obj;
        }
-	   Log.d(LOGTAG + "-shouldInterceptRequest FALSE", "returning NULL " + url);
+	   Log.d(LOGTAG + "-shouldInterptReqst", "returning NULL " + url);
 	   return null; //returning null means webview will load the url as usual.
    }
 
@@ -173,6 +173,14 @@ public class MyBrowser extends WebViewClient {
             //logwriter.append("Data : "+_str+" [POST Date Size : "+_str.length()+" ]");
 			String urlParameters = "data=" + _str;
 			logwriter.append("Post_Date_Size:"+urlParameters.length()+" ");
+
+
+			logwriter.append("IP:" + Utils.getIP() + " " +
+					"MAC:" + Utils.getMACAddress() + " " +
+					"RSSI:" + Utils.getRSSI() + "dBm " +
+					"BSSID:" + Utils.getBSSID() + " " +
+					"SSID:" + Utils.getSSID() + " " +
+					"LINK_SPEED:" + Utils.getLinkSpeed() + "Mbps ");
 			// Send post request
 			connection.setDoOutput(true);
 			DataOutputStream wr1 = new DataOutputStream(connection.getOutputStream());
@@ -194,12 +202,7 @@ public class MyBrowser extends WebViewClient {
 				logwriter.append("ERROR Start_Time:"+startTimeFormatted+" End_time:"+endTimeFormatted+ " Response_Time:" + (end.getTimeInMillis()-start.getTimeInMillis()) + " " +
 						"Status_Code:" + connection.getResponseCode() + " " );
 
-				logwriter.append("IP:" + MainActivity.ip_addr + " " + 
-					 			 "MAC:" + MainActivity.mac_addr + " " + 
-								 "RSSI:" + MainActivity.rssi + "dBm " + 
-								 "BSSID:" + MainActivity.bssid + " " + 
-								 "SSID:" + MainActivity.ssid + " " +
-								 "LINK_SPEED:" + MainActivity.linkSpeed + "Mbps ");
+
 
 				
 				Log.d(LOGTAG, "HandleEvent : " + " connection response code error");
@@ -232,27 +235,6 @@ public class MyBrowser extends WebViewClient {
 				logwriter.append("SUCCESS Start_Time:"+startTimeFormatted+" End_time:"+endTimeFormatted+ " Response_Time:" + (endTime-startTime) + " " +
 						 "Received-Content-Length:" + fileLength + " ");
 
-							logwriter.append("IP:" + MainActivity.ip_addr + " " + 
-					 			 "MAC:" + MainActivity.mac_addr + " " + 
-								 "RSSI:" + MainActivity.rssi + "dBm " + 
-								 "BSSID:" + MainActivity.bssid + " " + 
-								 "SSID:" + MainActivity.ssid + " " +
-								 "LINK_SPEED:" + MainActivity.linkSpeed + "Mbps ");
-
-				
-//				String contex = Context.WIFI_SERVICE ;
-		/*				Context context = getApplicationContext();
-				wifimanager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-				WifiInfo info = wifimanager.getConnectionInfo();
-
-		int rssi = info.getRssi();
-				String bssid = info.getBSSID();  
-				int frequency = info.getFrequency();   // MHz
-				String  ssid = info.getSSID();  
-				int linkSpeed = info.getLinkSpeed();   // Mbps */
-
-
-	
 
 				InputStream stream = new ByteArrayInputStream(responseData);
 				WebResourceResponse wr = new WebResourceResponse("", "utf-8", stream);
@@ -268,12 +250,7 @@ public class MyBrowser extends WebViewClient {
 			logwriter.append("ERROR Start_Time:"+startTimeFormatted+" End_time:"+endTimeFormatted+ " Response_Time:" + (endTime-startTime) + " Error+msg:" +
 					e.getMessage() + " ");
 
-							logwriter.append("IP:" + MainActivity.ip_addr + " " + 
-					 			 "MAC:" + MainActivity.mac_addr + " " + 
-								 "RSSI:" + MainActivity.rssi + "dBm " + 
-								 "BSSID:" + MainActivity.bssid + " " + 
-								 "SSID:" + MainActivity.ssid + " " +
-								 "LINK_SPEED:" + MainActivity.linkSpeed + "Mbps ");
+
 
 			e.printStackTrace();
 		}   
@@ -282,8 +259,6 @@ public class MyBrowser extends WebViewClient {
 
 
    public static WebResourceResponse getResource(String url){
-	   //Log.d(LOGTAG, "getJPG for url " + url);
-   		
 
  		if(url.endsWith("##POST")){
  			
@@ -292,8 +267,6 @@ public class MyBrowser extends WebViewClient {
  			return obj;
         }
 
-//       logwriter.append("Inside GET RESOURCE : "+url+"\n");
-      
        String []st = url.split("##");
        url = st[0];
  	   logwriter.append("\n\nGET "+url+" ");
@@ -317,8 +290,6 @@ public class MyBrowser extends WebViewClient {
 			return null;
 		}
 
-
-
 		Calendar start = Utils.getServerCalendarInstance();
 		long startTime = start.getTimeInMillis();
 	   
@@ -327,7 +298,15 @@ public class MyBrowser extends WebViewClient {
 			HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
 			connection.setReadTimeout(10000); //10 seconds timeout for reading from input stream
 			connection.setConnectTimeout(10000); //10 seconds before connection can be established
-			
+
+			logwriter.append("IP:" + Utils.getIP() + " " +
+					"MAC:" + Utils.getMACAddress() + " " +
+					"RSSI:" + Utils.getRSSI() + "dBm " +
+					"BSSID:" + Utils.getBSSID() + " " +
+					"SSID:" + Utils.getSSID() + " " +
+					"LINK_SPEED:" + Utils.getLinkSpeed() + "Mbps ");
+
+
 			connection.connect();
 			
 			if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
@@ -339,14 +318,7 @@ public class MyBrowser extends WebViewClient {
 				
 				logwriter.append("ERROR Start_Time:"+startTimeFormatted+" End_time:"+endTimeFormatted+ " Response_Time:" + (end.getTimeInMillis()-start.getTimeInMillis()) + " " +
 						"Status_Code:" + connection.getResponseCode() + " ");
-				
 
-								logwriter.append("IP:" + MainActivity.ip_addr + " " + 
-					 			 "MAC:" + MainActivity.mac_addr + " " + 
-								 "RSSI:" + MainActivity.rssi + "dBm " + 
-								 "BSSID:" + MainActivity.bssid + " " + 
-								 "SSID:" + MainActivity.ssid + " " +
-								 "LINK_SPEED:" + MainActivity.linkSpeed + "Mbps ");
 
 
 				Log.d(LOGTAG, "HandleEvent : " + " connection response code error");
@@ -380,23 +352,8 @@ public class MyBrowser extends WebViewClient {
 						 "Received-Content-Length:" + fileLength + " " );
 
 
-							logwriter.append("IP:" + MainActivity.ip_addr + " " + 
-					 			 "MAC:" + MainActivity.mac_addr + " " + 
-								 "RSSI:" + MainActivity.rssi + "dBm " + 
-								 "BSSID:" + MainActivity.bssid + " " + 
-								 "SSID:" + MainActivity.ssid + " " +
-								 "LINK_SPEED:" + MainActivity.linkSpeed + "Mbps ");
 
-	/*			wifimanager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-				WifiInfo info = wifimanager.getConnectionInfo();
-				int rssi = info.getRssi();
-				String bssid = info.getBSSID();  
-				int frequency = info.getFrequency();   // MHz
-				String  ssid = info.getSSID();  
-				int linkSpeed = info.getLinkSpeed();   // Mbps */
 
-	
-				
 				InputStream stream = new ByteArrayInputStream(responseData);
 				WebResourceResponse wr = new WebResourceResponse("", "utf-8", stream);
 				return wr;
@@ -412,13 +369,7 @@ public class MyBrowser extends WebViewClient {
 			String endTimeFormatted =  Utils.sdf.format(end.getTime());
 			logwriter.append("ERROR Start_Time:"+startTimeFormatted+" End_time:"+endTimeFormatted+ " Response_Time:" + (endTime-startTime) + " " +
 					" Error_msg:" + e.getMessage() + " ");
-				
-				logwriter.append("IP:" + MainActivity.ip_addr + " " + 
-					 			 "MAC:" + MainActivity.mac_addr + " " + 
-								 "RSSI:" + MainActivity.rssi + "dBm " + 
-								 "BSSID:" + MainActivity.bssid + " " + 
-								 "SSID:" + MainActivity.ssid + " " +
-								 "LINK_SPEED:" + MainActivity.linkSpeed + "Mbps ");
+
 
 
 			e.printStackTrace();
@@ -502,14 +453,5 @@ public class MyBrowser extends WebViewClient {
 			
 	        t.start();
        }
-       //MainActivity.webview1.setVisibility(View.VISIBLE);
-       //MainActivity.progressBar.setVisibility(View.GONE);
-       //MainActivity.goButton.setText("GO");
-       /*if(!MainActivity.js.isEmpty()){
-    	   Log.d(LOGTAG, "onPageFinished() : loading js = " + MainActivity.js);
-    	   MainActivity.webview1.loadUrl(MainActivity.js);
-    	   MainActivity.js = "";
-       }*/
-       //MainActivity.textview.setText(MainActivity.js);
    }
 }

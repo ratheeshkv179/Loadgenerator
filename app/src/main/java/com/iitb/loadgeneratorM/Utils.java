@@ -36,6 +36,7 @@ import org.json.simple.parser.ContainerFactory;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import android.content.Context;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Environment;
@@ -157,10 +158,10 @@ public class Utils {
 		nameValuePairs.add(new BasicNameValuePair(Constants.osVersion, osVersion));
 		nameValuePairs.add(new BasicNameValuePair(Constants.wifiVersion, "802.11n"));
 
-		nameValuePairs.add(new BasicNameValuePair(Constants.rssi,Integer.toString(MainActivity.rssi)));
-		nameValuePairs.add(new BasicNameValuePair(Constants.bssid, MainActivity.bssid));
-		nameValuePairs.add(new BasicNameValuePair(Constants.ssid, MainActivity.ssid));
-		nameValuePairs.add(new BasicNameValuePair(Constants.linkSpeed, Integer.toString(MainActivity.linkSpeed)));
+		nameValuePairs.add(new BasicNameValuePair(Constants.rssi,Integer.toString(getRSSI())));
+		nameValuePairs.add(new BasicNameValuePair(Constants.bssid, getBSSID()));
+		nameValuePairs.add(new BasicNameValuePair(Constants.ssid, getSSID()));
+		nameValuePairs.add(new BasicNameValuePair(Constants.linkSpeed, Integer.toString(getLinkSpeed())));
 
 		nameValuePairs.add(new BasicNameValuePair(Constants.macAddress, getMACAddress()));
 		nameValuePairs.add(new BasicNameValuePair(Constants.processorSpeed, getProcessorSpeed()));
@@ -173,7 +174,33 @@ public class Utils {
 
 		return nameValuePairs;
 	}
-	
+
+	public static int getRSSI(){
+
+		WifiInfo info = MainActivity.wifimanager.getConnectionInfo();
+		int rssi = info.getRssi();
+		return rssi;
+	}
+
+	public static String getBSSID(){
+		WifiInfo info = MainActivity.wifimanager.getConnectionInfo();
+		String bssid = info.getBSSID();
+		return  bssid;
+	}
+
+	public static  String getSSID(){
+		WifiInfo info = MainActivity.wifimanager.getConnectionInfo();
+		String ssid = info.getSSID();
+		return ssid;
+	}
+
+	public static  int getLinkSpeed(){
+
+		WifiInfo info = MainActivity.wifimanager.getConnectionInfo();
+		int lispeed = info.getLinkSpeed();
+		return  lispeed;
+	}
+
 	public static String getIP(){
 		WifiInfo info = MainActivity.wifimanager.getConnectionInfo();
 		int ip = info.getIpAddress();

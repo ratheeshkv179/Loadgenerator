@@ -249,7 +249,7 @@ int id action_context_bar 0x7f0b001d
 int id action_menu_divider 0x7f0b0001
 int id action_menu_presenter 0x7f0b0002
 int id action_mode_close_button 0x7f0b0024
-int id action_settings 0x7f0b0043
+int id action_settings 0x7f0b0042
 int id activity_chooser_view_content 0x7f0b0025
 int id always 0x7f0b0013
 int id beginning 0x7f0b000f
@@ -277,7 +277,7 @@ int id normal 0x7f0b0007
 int id progress_circular 0x7f0b0004
 int id progress_horizontal 0x7f0b0005
 int id radio 0x7f0b002f
-int id response_id 0x7f0b0042
+int id response_id 0x7f0b0041
 int id search_badge 0x7f0b0032
 int id search_bar 0x7f0b0031
 int id search_button 0x7f0b0033
@@ -297,7 +297,6 @@ int id showHome 0x7f0b000c
 int id showTitle 0x7f0b000d
 int id split_action_bar 0x7f0b001e
 int id startbutton 0x7f0b0040
-int id stopbutton 0x7f0b0041
 int id submit_area 0x7f0b0039
 int id tabMode 0x7f0b0008
 int id title 0x7f0b002b

@@ -91,16 +91,21 @@ public class BackgroundService extends IntentService{
 			}
 			e.printStackTrace();
 		}
-		
-		Bundle bundle = new Bundle();
-		bundle.putInt("enable", toEnableStart);
-		bundle.putString(Constants.BROADCAST_MESSAGE,msg);
-        //on complete  
-        Intent localIntent = new Intent(Constants.BROADCAST_ACTION)
-        					.putExtras(bundle);
-        	
-        // Broadcasts the Intent to receivers in this application.
-        LocalBroadcastManager.getInstance(this).sendBroadcast(localIntent);
+
+		try {
+
+			Bundle bundle = new Bundle();
+			bundle.putInt("enable", toEnableStart);
+			bundle.putString(Constants.BROADCAST_MESSAGE, msg);
+			//on complete
+			Intent localIntent = new Intent(Constants.BROADCAST_ACTION)
+					.putExtras(bundle);
+
+			// Broadcasts the Intent to receivers in this application.
+			LocalBroadcastManager.getInstance(this).sendBroadcast(localIntent);
+		}catch(Exception ex){
+			//MainActivity.textbox.append("Exception "+ex.toString());
+		}
     }
 	
 	//Registers itself by sending its device info such as ip, port, memory, processor, signal strength, etc

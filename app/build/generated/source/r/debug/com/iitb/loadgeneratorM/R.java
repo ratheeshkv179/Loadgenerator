@@ -830,7 +830,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f0b0001;
         public static final int action_menu_presenter=0x7f0b0002;
         public static final int action_mode_close_button=0x7f0b0024;
-        public static final int action_settings=0x7f0b0043;
+        public static final int action_settings=0x7f0b0042;
         public static final int activity_chooser_view_content=0x7f0b0025;
         public static final int always=0x7f0b0013;
         public static final int beginning=0x7f0b000f;
@@ -858,7 +858,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f0b0004;
         public static final int progress_horizontal=0x7f0b0005;
         public static final int radio=0x7f0b002f;
-        public static final int response_id=0x7f0b0042;
+        public static final int response_id=0x7f0b0041;
         public static final int search_badge=0x7f0b0032;
         public static final int search_bar=0x7f0b0031;
         public static final int search_button=0x7f0b0033;
@@ -878,7 +878,6 @@ containing a value of this type.
         public static final int showTitle=0x7f0b000d;
         public static final int split_action_bar=0x7f0b001e;
         public static final int startbutton=0x7f0b0040;
-        public static final int stopbutton=0x7f0b0041;
         public static final int submit_area=0x7f0b0039;
         public static final int tabMode=0x7f0b0008;
         public static final int title=0x7f0b002b;
