@@ -1,0 +1,11 @@
+-keep class com.iitb.loadgeneratorM.MainActivity { <init>(); }
+-keep class com.iitb.loadgeneratorM.BackgroundService { <init>(); }
+-keep class com.iitb.loadgeneratorM.DownloaderService { <init>(); }
+-keep class com.iitb.loadgeneratorM.AlarmReceiver { <init>(); }
+-keep class com.iitb.loadgeneratorM.ResponseReceiver { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}

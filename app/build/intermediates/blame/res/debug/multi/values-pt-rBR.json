@@ -1,0 +1,102 @@
+[
+    {
+        "outputFile": "/home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/res/merged/debug/values-pt-rBR/values-pt-rBR.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 63,
+                    "endOffset": 114
+                },
+                "from": {
+                    "file": "/home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/exploded-aar/com.github.rampo.updatechecker/library/2.1.8/res/values-pt-rBR/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 202,
+                        "endColumn": 63,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 119,
+                    "endColumn": 58,
+                    "endOffset": 173
+                },
+                "from": {
+                    "file": "/home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/exploded-aar/com.github.rampo.updatechecker/library/2.1.8/res/values-pt-rBR/values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 266,
+                        "endColumn": 58,
+                        "endOffset": 320
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 178,
+                    "endColumn": 51,
+                    "endOffset": 225
+                },
+                "from": {
+                    "file": "/home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/exploded-aar/com.github.rampo.updatechecker/library/2.1.8/res/values-pt-rBR/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 325,
+                        "endColumn": 51,
+                        "endOffset": 372
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 230,
+                    "endColumn": 104,
+                    "endOffset": 330
+                },
+                "from": {
+                    "file": "/home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/exploded-aar/com.github.rampo.updatechecker/library/2.1.8/res/values-pt-rBR/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 377,
+                        "endColumn": 104,
+                        "endOffset": 477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 335,
+                    "endColumn": 74,
+                    "endOffset": 405
+                },
+                "from": {
+                    "file": "/home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/exploded-aar/com.github.rampo.updatechecker/library/2.1.8/res/values-pt-rBR/values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 482,
+                        "endColumn": 74,
+                        "endOffset": 552
+                    }
+                }
+            }
+        ]
+    }
+]

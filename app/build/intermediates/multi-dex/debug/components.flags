@@ -1,0 +1,42 @@
+-injars /home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar
+-outjars /home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/multi-dex/debug/componentClasses.jar
+
+-libraryjars /home/br/Android/Sdk/build-tools/21.1.2/lib/shrinkedAndroid.jar
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontwarn
+-printconfiguration /home/br/Downloads/Load_Generator/loadgenerator1/app/build/intermediates/multi-dex/debug/components.flags
+
+
+-keep class com.iitb.loadgeneratorM.MainActivity {
+    <init>();
+}
+
+-keep class com.iitb.loadgeneratorM.BackgroundService {
+    <init>();
+}
+
+-keep class com.iitb.loadgeneratorM.DownloaderService {
+    <init>();
+}
+
+-keep class com.iitb.loadgeneratorM.AlarmReceiver {
+    <init>();
+}
+
+-keep class com.iitb.loadgeneratorM.ResponseReceiver {
+    <init>();
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
